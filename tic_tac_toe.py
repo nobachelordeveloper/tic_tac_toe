@@ -27,7 +27,6 @@ def init_game():
 	def check_win_condition(game_over, board):
 		winning_combinations = (('1','2','3'),('4','5','6'),('7','8','9'),('1','4','7'),('2','5','8'),('3','6','9'),('1','5','9'),('3','5','7'))
 		for a,b,c in winning_combinations:
-			# if((board[a] == board[b] == board[c]) and type(board[a]) == str):
 			if(board[a] == board[b] == board[c]):
 				if(board[a] == "X"):
 					print("Player One has won!")
@@ -53,7 +52,7 @@ def init_game():
 	player = "player_one"
 	while(not game_over):
 		get_user_input(player, board)
-		game_over = check_win_condition(game_over, board) #scope of game_over doesn't carry over because game_over gets redefined in the scope of a function
+		game_over = check_win_condition(game_over, board)
 		player = switch_players(player)
 	is_replay = input("Game Over! Enter 'Y' to play again. \n")
 	if(is_replay == "Y"):
